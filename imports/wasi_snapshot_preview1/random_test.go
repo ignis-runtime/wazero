@@ -7,9 +7,9 @@ import (
 	"testing"
 	"testing/iotest"
 
-	"github.com/tetratelabs/wazero"
-	"github.com/tetratelabs/wazero/internal/testing/require"
-	"github.com/tetratelabs/wazero/internal/wasip1"
+	"github.com/ASparkOfFire/wazero"
+	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ASparkOfFire/wazero/internal/wasip1"
 )
 
 func Test_randomGet(t *testing.T) {

@@ -6,10 +6,10 @@ import (
 	"net"
 	"syscall"
 
-	"github.com/tetratelabs/wazero/experimental/sys"
-	experimentalsys "github.com/tetratelabs/wazero/experimental/sys"
-	"github.com/tetratelabs/wazero/internal/fsapi"
-	socketapi "github.com/tetratelabs/wazero/internal/sock"
+	"github.com/ASparkOfFire/wazero/experimental/sys"
+	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ASparkOfFire/wazero/internal/fsapi"
+	socketapi "github.com/ASparkOfFire/wazero/internal/sock"
 )
 
 // MSG_PEEK is a filler value.

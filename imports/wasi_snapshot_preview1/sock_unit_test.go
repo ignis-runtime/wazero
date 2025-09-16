@@ -4,10 +4,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/tetratelabs/wazero/experimental/sys"
-	"github.com/tetratelabs/wazero/internal/sock"
-	"github.com/tetratelabs/wazero/internal/testing/require"
-	"github.com/tetratelabs/wazero/internal/wasip1"
+	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ASparkOfFire/wazero/internal/sock"
+	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ASparkOfFire/wazero/internal/wasip1"
 )
 
 func Test_getExtendedWasiFiletype(t *testing.T) {

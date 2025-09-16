@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/tetratelabs/wazero/internal/leb128"
-	"github.com/tetratelabs/wazero/internal/wasm"
+	"github.com/ASparkOfFire/wazero/internal/leb128"
+	"github.com/ASparkOfFire/wazero/internal/wasm"
 )
 
 func decodeExport(r *bytes.Reader, ret *wasm.Export) (err error) {

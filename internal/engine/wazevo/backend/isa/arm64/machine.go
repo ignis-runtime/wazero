@@ -6,10 +6,10 @@ import (
 	"math"
 	"strings"
 
-	"github.com/tetratelabs/wazero/internal/engine/wazevo/backend"
-	"github.com/tetratelabs/wazero/internal/engine/wazevo/backend/regalloc"
-	"github.com/tetratelabs/wazero/internal/engine/wazevo/ssa"
-	"github.com/tetratelabs/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend"
+	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
+	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
 )
 
 type (

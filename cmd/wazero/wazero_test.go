@@ -13,14 +13,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/tetratelabs/wazero/api"
-	"github.com/tetratelabs/wazero/experimental/logging"
-	"github.com/tetratelabs/wazero/imports/wasi_snapshot_preview1"
-	"github.com/tetratelabs/wazero/internal/internalapi"
-	"github.com/tetratelabs/wazero/internal/platform"
-	"github.com/tetratelabs/wazero/internal/testing/require"
-	"github.com/tetratelabs/wazero/internal/version"
-	"github.com/tetratelabs/wazero/sys"
+	"github.com/ASparkOfFire/wazero/api"
+	"github.com/ASparkOfFire/wazero/experimental/logging"
+	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
+	"github.com/ASparkOfFire/wazero/internal/internalapi"
+	"github.com/ASparkOfFire/wazero/internal/platform"
+	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ASparkOfFire/wazero/internal/version"
+	"github.com/ASparkOfFire/wazero/sys"
 )
 
 //go:embed testdata/infinite_loop.wasm

@@ -3,9 +3,9 @@ package binaryencoding
 import (
 	"testing"
 
-	"github.com/tetratelabs/wazero/internal/leb128"
-	"github.com/tetratelabs/wazero/internal/testing/require"
-	"github.com/tetratelabs/wazero/internal/wasm"
+	"github.com/ASparkOfFire/wazero/internal/leb128"
+	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ASparkOfFire/wazero/internal/wasm"
 )
 
 func TestEncodeGlobal(t *testing.T) {

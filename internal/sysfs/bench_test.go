@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tetratelabs/wazero/experimental/sys"
+	"github.com/ASparkOfFire/wazero/experimental/sys"
 )
 
 func BenchmarkFsFileUtimesNs(b *testing.B) {

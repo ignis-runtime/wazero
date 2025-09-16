@@ -5,9 +5,9 @@ import (
 	"bytes"
 	"math"
 
-	"github.com/tetratelabs/wazero/internal/engine/wazevo/ssa"
-	"github.com/tetratelabs/wazero/internal/engine/wazevo/wazevoapi"
-	"github.com/tetratelabs/wazero/internal/wasm"
+	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
+	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ASparkOfFire/wazero/internal/wasm"
 )
 
 // Compiler is in charge of lowering Wasm to SSA IR, and does the optimization

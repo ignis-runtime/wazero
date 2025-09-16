@@ -3,7 +3,7 @@ package wazevoapi
 import (
 	"testing"
 
-	"github.com/tetratelabs/wazero/internal/testing/require"
+	"github.com/ASparkOfFire/wazero/internal/testing/require"
 )
 
 func TestNewNilVarLength(t *testing.T) {

@@ -3,8 +3,8 @@ package amd64
 import (
 	"testing"
 
-	"github.com/tetratelabs/wazero/internal/engine/wazevo/backend/regalloc"
-	"github.com/tetratelabs/wazero/internal/testing/require"
+	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ASparkOfFire/wazero/internal/testing/require"
 )
 
 func TestMachine_lowerAluRmiROp_Uses_AssignUse(t *testing.T) {

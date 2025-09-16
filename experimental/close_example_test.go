@@ -3,7 +3,7 @@ package experimental_test
 import (
 	"context"
 
-	"github.com/tetratelabs/wazero/experimental"
+	"github.com/ASparkOfFire/wazero/experimental"
 )
 
 var ctx context.Context
