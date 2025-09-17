@@ -1,8 +1,8 @@
 package amd64
 
 import (
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/regalloc"
 )
 
 // PostRegAlloc implements backend.Machine.

@@ -3,11 +3,11 @@ package logging
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/logging"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	. "github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/logging"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	. "github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 type testFunctionDefinition struct {

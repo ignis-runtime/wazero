@@ -4,10 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestSnapshotNestedWasmInvocation(t *testing.T) {
@@ -24,8 +23,8 @@ func TestSnapshotNestedWasmInvocation(t *testing.T) {
 			defer func() {
 				sidechannel = 10
 			}()
-			snapshot := experimental.GetSnapshotter(ctx).Snapshot()
-			snapshots := ctx.Value(snapshotsKey{}).(*[]experimental.Snapshot)
+			snapshot := GetSnapshotter(ctx).Snapshot()
+			snapshots := ctx.Value(snapshotsKey{}).(*[]Snapshot)
 			idx := len(*snapshots)
 			*snapshots = append(*snapshots, snapshot)
 			ok := mod.Memory().WriteUint32Le(snapshotPtr, uint32(idx))
@@ -41,7 +40,7 @@ func TestSnapshotNestedWasmInvocation(t *testing.T) {
 		WithFunc(func(ctx context.Context, mod api.Module, snapshotPtr uint32) {
 			idx, ok := mod.Memory().ReadUint32Le(snapshotPtr)
 			require.True(t, ok)
-			snapshots := ctx.Value(snapshotsKey{}).(*[]experimental.Snapshot)
+			snapshots := ctx.Value(snapshotsKey{}).(*[]Snapshot)
 			snapshot := (*snapshots)[idx]
 
 			snapshot.Restore([]uint64{12})
@@ -53,9 +52,9 @@ func TestSnapshotNestedWasmInvocation(t *testing.T) {
 	mod, err := rt.Instantiate(ctx, snapshotWasm)
 	require.NoError(t, err)
 
-	var snapshots []experimental.Snapshot
+	var snapshots []Snapshot
 	ctx = context.WithValue(ctx, snapshotsKey{}, &snapshots)
-	ctx = experimental.WithSnapshotter(ctx)
+	ctx = WithSnapshotter(ctx)
 
 	snapshotPtr := uint64(0)
 	res, err := mod.ExportedFunction("snapshot").Call(ctx, snapshotPtr)
@@ -75,8 +74,8 @@ func TestSnapshotMultipleWasmInvocations(t *testing.T) {
 	_, err := rt.NewHostModuleBuilder("example").
 		NewFunctionBuilder().
 		WithFunc(func(ctx context.Context, mod api.Module, snapshotPtr uint32) int32 {
-			snapshot := experimental.GetSnapshotter(ctx).Snapshot()
-			snapshots := ctx.Value(snapshotsKey{}).(*[]experimental.Snapshot)
+			snapshot := GetSnapshotter(ctx).Snapshot()
+			snapshots := ctx.Value(snapshotsKey{}).(*[]Snapshot)
 			idx := len(*snapshots)
 			*snapshots = append(*snapshots, snapshot)
 			ok := mod.Memory().WriteUint32Le(snapshotPtr, uint32(idx))
@@ -89,7 +88,7 @@ func TestSnapshotMultipleWasmInvocations(t *testing.T) {
 		WithFunc(func(ctx context.Context, mod api.Module, snapshotPtr uint32) {
 			idx, ok := mod.Memory().ReadUint32Le(snapshotPtr)
 			require.True(t, ok)
-			snapshots := ctx.Value(snapshotsKey{}).(*[]experimental.Snapshot)
+			snapshots := ctx.Value(snapshotsKey{}).(*[]Snapshot)
 			snapshot := (*snapshots)[idx]
 
 			snapshot.Restore([]uint64{12})
@@ -101,9 +100,9 @@ func TestSnapshotMultipleWasmInvocations(t *testing.T) {
 	mod, err := rt.Instantiate(ctx, snapshotWasm)
 	require.NoError(t, err)
 
-	var snapshots []experimental.Snapshot
+	var snapshots []Snapshot
 	ctx = context.WithValue(ctx, snapshotsKey{}, &snapshots)
-	ctx = experimental.WithSnapshotter(ctx)
+	ctx = WithSnapshotter(ctx)
 
 	snapshotPtr := uint64(0)
 	res, err := mod.ExportedFunction("snapshot").Call(ctx, snapshotPtr)

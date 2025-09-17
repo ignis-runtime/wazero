@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero"
+	"github.com/ignis-runtime/wazero"
 )
 
 func TestMain(m *testing.M) {

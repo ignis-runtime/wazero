@@ -5,8 +5,8 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 type (

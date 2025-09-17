@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestStore_registerModule(t *testing.T) {

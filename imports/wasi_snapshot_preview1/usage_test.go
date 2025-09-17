@@ -6,10 +6,9 @@ import (
 	_ "embed"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/internal/fstest"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/internal/fstest"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 // pringArgsWasm was compiled from testdata/wasi_arg.wat
@@ -27,7 +26,7 @@ func TestInstantiateModule(t *testing.T) {
 
 	// Configure WASI to write stdout to a buffer, so that we can verify it later.
 	sys := wazero.NewModuleConfig().WithStdout(&stdout)
-	wasi_snapshot_preview1.MustInstantiate(ctx, r)
+	MustInstantiate(ctx, r)
 
 	compiled, err := r.CompileModule(ctx, pringArgsWasm)
 	require.NoError(t, err)
@@ -62,7 +61,7 @@ func TestInstantiateModule_Prestat(t *testing.T) {
 
 	var stdout bytes.Buffer
 
-	wasi_snapshot_preview1.MustInstantiate(ctx, r)
+	MustInstantiate(ctx, r)
 
 	_, err := r.InstantiateWithConfig(ctx, printPrestatDirname, wazero.NewModuleConfig().
 		WithStdout(&stdout).

@@ -10,13 +10,13 @@ import (
 	"testing"
 	"unsafe"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/experimental/logging"
-	"github.com/ASparkOfFire/wazero/internal/testing/binaryencoding"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/experimental/logging"
+	"github.com/ignis-runtime/wazero/internal/testing/binaryencoding"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // We haven't had public APIs for referencing all the imported entries from wazero.CompiledModule,

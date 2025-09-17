@@ -6,9 +6,9 @@ import (
 	"net"
 	"syscall"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/fsapi"
-	socketapi "github.com/ASparkOfFire/wazero/internal/sock"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/fsapi"
+	socketapi "github.com/ignis-runtime/wazero/internal/sock"
 )
 
 // MSG_PEEK is the constant syscall.MSG_PEEK

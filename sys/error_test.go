@@ -5,8 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 type notExitError struct {
@@ -18,7 +17,7 @@ func (e *notExitError) Error() string {
 }
 
 func TestIs(t *testing.T) {
-	err := sys.NewExitError(2)
+	err := NewExitError(2)
 	tests := []struct {
 		name    string
 		target  error
@@ -31,7 +30,7 @@ func TestIs(t *testing.T) {
 		},
 		{
 			name:    "different exit code",
-			target:  sys.NewExitError(1),
+			target:  NewExitError(1),
 			matches: false,
 		},
 		{
@@ -54,19 +53,19 @@ func TestIs(t *testing.T) {
 
 func TestExitError_Error(t *testing.T) {
 	t.Run("timeout", func(t *testing.T) {
-		err := sys.NewExitError(sys.ExitCodeDeadlineExceeded)
-		require.Equal(t, sys.ExitCodeDeadlineExceeded, err.ExitCode())
+		err := NewExitError(ExitCodeDeadlineExceeded)
+		require.Equal(t, ExitCodeDeadlineExceeded, err.ExitCode())
 		require.EqualError(t, err, "module closed with context deadline exceeded")
 		require.ErrorIs(t, err, context.DeadlineExceeded, "exit code context deadline exceeded should work")
 	})
 	t.Run("cancel", func(t *testing.T) {
-		err := sys.NewExitError(sys.ExitCodeContextCanceled)
-		require.Equal(t, sys.ExitCodeContextCanceled, err.ExitCode())
+		err := NewExitError(ExitCodeContextCanceled)
+		require.Equal(t, ExitCodeContextCanceled, err.ExitCode())
 		require.EqualError(t, err, "module closed with context canceled")
 		require.ErrorIs(t, err, context.Canceled, "exit code context canceled should work")
 	})
 	t.Run("normal", func(t *testing.T) {
-		err := sys.NewExitError(123)
+		err := NewExitError(123)
 		require.Equal(t, uint32(123), err.ExitCode())
 		require.EqualError(t, err, "module closed with exit_code(123)")
 	})

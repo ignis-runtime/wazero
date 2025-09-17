@@ -3,8 +3,8 @@ package wasm
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestModule_BuildMemoryDefinitions(t *testing.T) {

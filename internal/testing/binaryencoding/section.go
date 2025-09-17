@@ -1,8 +1,8 @@
 package binaryencoding
 
 import (
-	"github.com/ASparkOfFire/wazero/internal/leb128"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/leb128"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // encodeSection encodes the sectionID, the size of its contents in bytes, followed by the contents.

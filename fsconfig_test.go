@@ -3,10 +3,10 @@ package wazero
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
-	testfs "github.com/ASparkOfFire/wazero/internal/testing/fs"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
+	testfs "github.com/ignis-runtime/wazero/internal/testing/fs"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 // TestFSConfig only tests the cases that change the inputs to sysfs.ValidatePreopens.

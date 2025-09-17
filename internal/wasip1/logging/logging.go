@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/logging"
-	"github.com/ASparkOfFire/wazero/internal/sys"
-	. "github.com/ASparkOfFire/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/logging"
+	"github.com/ignis-runtime/wazero/internal/sys"
+	. "github.com/ignis-runtime/wazero/internal/wasip1"
 )
 
 var le = binary.LittleEndian

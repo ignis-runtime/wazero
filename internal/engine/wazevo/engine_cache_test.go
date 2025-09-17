@@ -7,10 +7,10 @@ import (
 	"io"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/u32"
-	"github.com/ASparkOfFire/wazero/internal/u64"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/u32"
+	"github.com/ignis-runtime/wazero/internal/u64"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 var testVersion = "0.0.1"

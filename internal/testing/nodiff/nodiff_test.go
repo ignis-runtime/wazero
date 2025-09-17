@@ -3,8 +3,8 @@ package nodiff
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 func Test_ensureMutableGlobalsMatch(t *testing.T) {

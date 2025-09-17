@@ -4,7 +4,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 func unlink(name string) sys.Errno {

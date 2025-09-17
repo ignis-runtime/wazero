@@ -8,9 +8,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/imports/wasi_snapshot_preview1"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // catFS is an embedded filesystem limited to test.txt

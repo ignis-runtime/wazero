@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/leb128"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/internal/wasmdebug"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/leb128"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasmdebug"
 )
 
 // DecodeModule implements wasm.DecodeModule for the WebAssembly 1.0 (20191205) Binary Format

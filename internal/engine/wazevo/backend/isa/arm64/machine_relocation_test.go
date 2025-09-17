@@ -5,9 +5,9 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func Test_maxNumFunctions(t *testing.T) {

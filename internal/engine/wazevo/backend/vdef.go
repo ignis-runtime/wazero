@@ -1,7 +1,7 @@
 package backend
 
 import (
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
 )
 
 // SSAValueDefinition represents a definition of an SSA value.

@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
+	"github.com/ignis-runtime/wazero/api"
 )
 
 func TestNewFunction(t *testing.T) {

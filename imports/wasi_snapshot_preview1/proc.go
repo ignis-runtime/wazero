@@ -3,10 +3,10 @@ package wasi_snapshot_preview1
 import (
 	"context"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // procExit is the WASI function named ProcExitName that terminates the

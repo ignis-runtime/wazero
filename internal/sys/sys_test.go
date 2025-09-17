@@ -5,12 +5,12 @@ import (
 	"testing"
 	"time"
 
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/fstest"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/sys"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/fstest"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 func TestContext_WalltimeNanos(t *testing.T) {

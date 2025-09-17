@@ -1,4 +1,4 @@
-module github.com/ASparkOfFire/wazero
+module github.com/ignis-runtime/wazero
 
 // Floor Go version of wazero (current - 2)
 go 1.23.0

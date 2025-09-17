@@ -3,7 +3,7 @@ package interpreter
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 // TestInstructionName ensures that all the operation Kind's stringer is well-defined.

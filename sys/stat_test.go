@@ -8,8 +8,7 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func Test_NewStat_t(t *testing.T) {
@@ -31,7 +30,7 @@ func Test_NewStat_t(t *testing.T) {
 	osSymlinkInfo, err := os.Lstat(link)
 	require.NoError(t, err)
 
-	osFileSt := sys.NewStat_t(osFileInfo)
+	osFileSt := NewStat_t(osFileInfo)
 	testFS := fstest.MapFS{
 		"dir": {
 			Mode:    osDirInfo.Mode(),
@@ -116,7 +115,7 @@ func Test_NewStat_t(t *testing.T) {
 	for _, tt := range tests {
 		tc := tt
 		t.Run(tc.name, func(t *testing.T) {
-			st := sys.NewStat_t(tc.info)
+			st := NewStat_t(tc.info)
 			if tc.expectDevIno && (runtime.GOOS == "linux" || runtime.GOOS == "darwin" || runtime.GOOS == "freebsd") {
 				require.NotEqual(t, uint64(0), st.Dev)
 				require.NotEqual(t, uint64(0), st.Ino)
@@ -128,7 +127,7 @@ func Test_NewStat_t(t *testing.T) {
 			// link mode may differ on windows, so mask
 			require.Equal(t, tc.expectedMode, st.Mode&tc.expectedMode)
 
-			if sys.SysParseable && runtime.GOOS != "windows" {
+			if SysParseable && runtime.GOOS != "windows" {
 				switch st.Nlink {
 				case 2, 4: // dirents may include dot entries.
 					require.Equal(t, fs.ModeDir, st.Mode.Type())
@@ -141,15 +140,15 @@ func Test_NewStat_t(t *testing.T) {
 
 			require.Equal(t, tc.expectedSize, st.Size)
 
-			if tc.expectAtimCtime && sys.SysParseable {
+			if tc.expectAtimCtime && SysParseable {
 				// We don't validate times strictly because it is os-dependent
 				// what updates times. There are edge cases for symlinks, too.
-				require.NotEqual(t, sys.EpochNanos(0), st.Ctim)
-				require.NotEqual(t, sys.EpochNanos(0), st.Mtim)
-				require.NotEqual(t, sys.EpochNanos(0), st.Mtim)
+				require.NotEqual(t, EpochNanos(0), st.Ctim)
+				require.NotEqual(t, EpochNanos(0), st.Mtim)
+				require.NotEqual(t, EpochNanos(0), st.Mtim)
 			} else { // mtim is used for atim and ctime
 				require.Equal(t, st.Mtim, st.Ctim)
-				require.NotEqual(t, sys.EpochNanos(0), st.Mtim)
+				require.NotEqual(t, EpochNanos(0), st.Mtim)
 				require.Equal(t, st.Mtim, st.Atim)
 			}
 		})

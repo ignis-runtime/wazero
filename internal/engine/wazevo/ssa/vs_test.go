@@ -3,7 +3,7 @@ package ssa
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestValue_InstructionID(t *testing.T) {

@@ -8,14 +8,14 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
-	"github.com/ASparkOfFire/wazero/internal/expctxkeys"
-	"github.com/ASparkOfFire/wazero/internal/internalapi"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/internal/wasmdebug"
-	"github.com/ASparkOfFire/wazero/internal/wasmruntime"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/expctxkeys"
+	"github.com/ignis-runtime/wazero/internal/internalapi"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasmdebug"
+	"github.com/ignis-runtime/wazero/internal/wasmruntime"
 )
 
 type (

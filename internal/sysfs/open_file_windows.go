@@ -7,7 +7,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 func openFile(path string, oflag sys.Oflag, perm fs.FileMode) (*os.File, sys.Errno) {

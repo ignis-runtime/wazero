@@ -4,12 +4,12 @@ import (
 	"context"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/fsapi"
-	internalsys "github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/fsapi"
+	internalsys "github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // pollOneoff is the WASI function named PollOneoffName that concurrently

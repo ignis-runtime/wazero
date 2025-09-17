@@ -10,12 +10,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/moremath"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/internal/wasmruntime"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/moremath"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasmruntime"
 )
 
 type (
@@ -339,7 +339,7 @@ func Run(t *testing.T, testDataFS embed.FS, ctx context.Context, config wazero.R
 	}
 
 	// If the go:embed path resolution was wrong, this fails.
-	// https://github.com/ASparkOfFire/wazero/issues/247
+	// https://github.com/ignis-runtime/wazero/issues/247
 	require.True(t, len(caseNames) > 0, "len(caseNames)=%d (not greater than zero)", len(caseNames))
 
 	for _, f := range caseNames {

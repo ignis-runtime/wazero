@@ -1,7 +1,7 @@
 package binaryencoding
 
 import (
-	"github.com/ASparkOfFire/wazero/internal/leb128"
+	"github.com/ignis-runtime/wazero/internal/leb128"
 )
 
 // EncodeLimitsType returns the `limitsType` (min, max) encoded in WebAssembly 1.0 (20191205) Binary Format.

@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 func Test_NewFakeWalltime(t *testing.T) {

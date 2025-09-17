@@ -3,7 +3,7 @@ package frontend
 import (
 	"slices"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
 )
 
 func sortSSAValueIDs(IDs []ssa.ValueID) {

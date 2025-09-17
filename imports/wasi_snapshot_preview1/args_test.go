@@ -3,9 +3,9 @@ package wasi_snapshot_preview1_test
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
 )
 
 func Test_argsGet(t *testing.T) {

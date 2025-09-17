@@ -4,9 +4,8 @@ import (
 	"context"
 	_ "embed"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/imports/emscripten"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/imports/wasi_snapshot_preview1"
 )
 
 //go:embed testdata/invoke.wasm
@@ -28,7 +27,7 @@ func Example_instantiateForModule() {
 		panic(err)
 	}
 
-	envCloser, err := emscripten.InstantiateForModule(ctx, r, compiled)
+	envCloser, err := InstantiateForModule(ctx, r, compiled)
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +52,7 @@ func Example_functionExporter() {
 	if err != nil {
 		panic(err)
 	}
-	exporter, err := emscripten.NewFunctionExporterForModule(compiled)
+	exporter, err := NewFunctionExporterForModule(compiled)
 	if err != nil {
 		panic(err)
 	}

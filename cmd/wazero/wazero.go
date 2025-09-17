@@ -15,16 +15,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/experimental/logging"
-	"github.com/ASparkOfFire/wazero/experimental/sock"
-	"github.com/ASparkOfFire/wazero/experimental/sysfs"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	internalsys "github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/version"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/experimental/logging"
+	"github.com/ignis-runtime/wazero/experimental/sock"
+	"github.com/ignis-runtime/wazero/experimental/sysfs"
+	"github.com/ignis-runtime/wazero/imports/wasi_snapshot_preview1"
+	internalsys "github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/version"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 func main() {

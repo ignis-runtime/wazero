@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"log"
 	"time"
-
-	"github.com/ASparkOfFire/wazero"
 )
 
 // infiniteLoopWasm exports a function named "infinite_loop" that never exits.
@@ -21,13 +19,13 @@ var infiniteLoopWasm []byte
 func ExampleRuntimeConfig_WithCloseOnContextDone_context_timeout() {
 	ctx := context.Background()
 
-	r := wazero.NewRuntimeWithConfig(ctx,
+	r := NewRuntimeWithConfig(ctx,
 		// Enables the WithCloseOnContextDone option.
-		wazero.NewRuntimeConfig().WithCloseOnContextDone(true))
+		NewRuntimeConfig().WithCloseOnContextDone(true))
 	defer r.Close(ctx)
 
 	moduleInstance, err := r.InstantiateWithConfig(ctx, infiniteLoopWasm,
-		wazero.NewModuleConfig().WithName("malicious_wasm"))
+		NewModuleConfig().WithName("malicious_wasm"))
 	if err != nil {
 		log.Panicln(err)
 	}
@@ -54,13 +52,13 @@ func ExampleRuntimeConfig_WithCloseOnContextDone_context_timeout() {
 func ExampleRuntimeConfig_WithCloseOnContextDone_context_cancel() {
 	ctx := context.Background()
 
-	r := wazero.NewRuntimeWithConfig(ctx,
+	r := NewRuntimeWithConfig(ctx,
 		// Enables the WithCloseOnContextDone option.
-		wazero.NewRuntimeConfig().WithCloseOnContextDone(true))
+		NewRuntimeConfig().WithCloseOnContextDone(true))
 	defer r.Close(ctx)
 
 	moduleInstance, err := r.InstantiateWithConfig(ctx, infiniteLoopWasm,
-		wazero.NewModuleConfig().WithName("malicious_wasm"))
+		NewModuleConfig().WithName("malicious_wasm"))
 	if err != nil {
 		log.Panicln(err)
 	}
@@ -91,13 +89,13 @@ func ExampleRuntimeConfig_WithCloseOnContextDone_context_cancel() {
 func ExampleRuntimeConfig_WithCloseOnContextDone_moduleClose() {
 	ctx := context.Background()
 
-	r := wazero.NewRuntimeWithConfig(ctx,
+	r := NewRuntimeWithConfig(ctx,
 		// Enables the WithCloseOnContextDone option.
-		wazero.NewRuntimeConfig().WithCloseOnContextDone(true))
+		NewRuntimeConfig().WithCloseOnContextDone(true))
 	defer r.Close(ctx)
 
 	moduleInstance, err := r.InstantiateWithConfig(ctx, infiniteLoopWasm,
-		wazero.NewModuleConfig().WithName("malicious_wasm"))
+		NewModuleConfig().WithName("malicious_wasm"))
 	if err != nil {
 		log.Panicln(err)
 	}

@@ -8,7 +8,7 @@ import (
 	"math"
 	"reflect"
 
-	"github.com/ASparkOfFire/wazero/api"
+	"github.com/ignis-runtime/wazero/api"
 )
 
 type paramsKind byte

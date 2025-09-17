@@ -4,14 +4,12 @@ import (
 	"embed"
 	"io/fs"
 	"log"
-
-	"github.com/ASparkOfFire/wazero"
 )
 
 //go:embed testdata/index.html
 var testdataIndex embed.FS
 
-var moduleConfig wazero.ModuleConfig
+var moduleConfig ModuleConfig
 
 // This example shows how to configure an embed.FS.
 func Example_fsConfig() {
@@ -21,9 +19,9 @@ func Example_fsConfig() {
 		log.Panicln(err)
 	}
 
-	moduleConfig = wazero.NewModuleConfig().
+	moduleConfig = NewModuleConfig().
 		// Make "index.html" accessible to the guest as "/index.html".
-		WithFSConfig(wazero.NewFSConfig().WithFSMount(rooted, "/"))
+		WithFSConfig(NewFSConfig().WithFSMount(rooted, "/"))
 
 	// Output:
 }

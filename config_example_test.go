@@ -5,16 +5,15 @@ import (
 	_ "embed"
 	"log"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
+	"github.com/ignis-runtime/wazero/api"
 )
 
 // This is a basic example of retrieving custom sections using RuntimeConfig.WithCustomSections.
 func Example_runtimeConfig_WithCustomSections() {
 	ctx := context.Background()
-	config := wazero.NewRuntimeConfig().WithCustomSections(true)
+	config := NewRuntimeConfig().WithCustomSections(true)
 
-	r := wazero.NewRuntimeWithConfig(ctx, config)
+	r := NewRuntimeWithConfig(ctx, config)
 	defer r.Close(ctx)
 
 	m, err := r.CompileModule(ctx, addWasm)

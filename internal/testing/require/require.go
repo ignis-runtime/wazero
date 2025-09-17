@@ -16,7 +16,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 // TestingT is an interface wrapper of functions used in TestingT

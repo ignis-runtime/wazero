@@ -7,15 +7,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/experimental/logging"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/internal/testing/proxy"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/experimental/logging"
+	"github.com/ignis-runtime/wazero/internal/testing/proxy"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 type arbitrary struct{}
@@ -40,7 +39,7 @@ func TestNewFunctionExporter(t *testing.T) {
 		// Instantiate the current WASI functions under the wasi_unstable
 		// instead of wasi_snapshot_preview1.
 		wasiBuilder := r.NewHostModuleBuilder("wasi_unstable")
-		wasi_snapshot_preview1.NewFunctionExporter().ExportFunctions(wasiBuilder)
+		NewFunctionExporter().ExportFunctions(wasiBuilder)
 		_, err := wasiBuilder.Instantiate(testCtx)
 		require.NoError(t, err)
 
@@ -56,8 +55,8 @@ func TestNewFunctionExporter(t *testing.T) {
 		defer r.Close(testCtx)
 
 		// Export the default WASI functions
-		wasiBuilder := r.NewHostModuleBuilder(wasi_snapshot_preview1.ModuleName)
-		wasi_snapshot_preview1.NewFunctionExporter().ExportFunctions(wasiBuilder)
+		wasiBuilder := r.NewHostModuleBuilder(ModuleName)
+		NewFunctionExporter().ExportFunctions(wasiBuilder)
 
 		// Override proc_exit to prove the point that you can add or replace
 		// functions like this.
@@ -99,13 +98,13 @@ func requireProxyModuleWithContext(ctx context.Context, t *testing.T, config waz
 
 	r := wazero.NewRuntime(ctx)
 
-	wasiModuleCompiled, err := wasi_snapshot_preview1.NewBuilder(r).Compile(ctx)
+	wasiModuleCompiled, err := NewBuilder(r).Compile(ctx)
 	require.NoError(t, err)
 
 	_, err = r.InstantiateModule(ctx, wasiModuleCompiled, config)
 	require.NoError(t, err)
 
-	proxyBin := proxy.NewModuleBinary(wasi_snapshot_preview1.ModuleName, wasiModuleCompiled)
+	proxyBin := proxy.NewModuleBinary(ModuleName, wasiModuleCompiled)
 
 	proxyCompiled, err := r.CompileModule(ctx, proxyBin)
 	require.NoError(t, err)
@@ -130,13 +129,13 @@ func requireErrnoNosys(t *testing.T, funcName string, params ...uint64) string {
 	defer r.Close(ctx)
 
 	// Instantiate the wasi module.
-	wasiModuleCompiled, err := wasi_snapshot_preview1.NewBuilder(r).Compile(ctx)
+	wasiModuleCompiled, err := NewBuilder(r).Compile(ctx)
 	require.NoError(t, err)
 
 	_, err = r.InstantiateModule(ctx, wasiModuleCompiled, wazero.NewModuleConfig())
 	require.NoError(t, err)
 
-	proxyBin := proxy.NewModuleBinary(wasi_snapshot_preview1.ModuleName, wasiModuleCompiled)
+	proxyBin := proxy.NewModuleBinary(ModuleName, wasiModuleCompiled)
 
 	proxyCompiled, err := r.CompileModule(ctx, proxyBin)
 	require.NoError(t, err)

@@ -6,8 +6,8 @@ import (
 	"math"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/binaryencoding"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/testing/binaryencoding"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestLimitsType(t *testing.T) {

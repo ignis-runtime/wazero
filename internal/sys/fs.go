@@ -5,11 +5,11 @@ import (
 	"io/fs"
 	"net"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/descriptor"
-	"github.com/ASparkOfFire/wazero/internal/fsapi"
-	socketapi "github.com/ASparkOfFire/wazero/internal/sock"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/descriptor"
+	"github.com/ignis-runtime/wazero/internal/fsapi"
+	socketapi "github.com/ignis-runtime/wazero/internal/sock"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
 )
 
 const (

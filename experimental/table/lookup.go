@@ -1,8 +1,8 @@
 package table
 
 import (
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // LookupFunction tries to get an api.Function from the table instance specified by `tableIndex` and `tableOffset` in the

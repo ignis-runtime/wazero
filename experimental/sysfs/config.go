@@ -1,8 +1,8 @@
 package sysfs
 
 import (
-	"github.com/ASparkOfFire/wazero"
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 // FSConfig extends wazero.FSConfig, allowing access to the experimental

@@ -7,18 +7,17 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/isa/amd64"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/isa/arm64"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/frontend"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/testcases"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/isa/amd64"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/isa/arm64"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/frontend"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/testcases"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 func TestMain(m *testing.M) {
@@ -28,7 +27,7 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
-func newMachine() backend.Machine {
+func newMachine() Machine {
 	switch runtime.GOARCH {
 	case "arm64":
 		return arm64.NewBackend()
@@ -2394,7 +2393,7 @@ L5 (SSA Block: blk5):
 			fc := frontend.NewFrontendCompiler(tc.m, ssab, &offset, false, false, false)
 			machine := newMachine()
 			machine.DisableStackCheck()
-			be := backend.NewCompiler(context.Background(), machine, ssab)
+			be := NewCompiler(context.Background(), machine, ssab)
 
 			// Lowers the Wasm to SSA.
 			typeIndex := tc.m.FunctionSection[tc.targetIndex]

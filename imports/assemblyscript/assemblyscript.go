@@ -33,13 +33,13 @@ import (
 	"strings"
 	"unicode/utf16"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
-	. "github.com/ASparkOfFire/wazero/internal/assemblyscript"
-	internalsys "github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
+	. "github.com/ignis-runtime/wazero/internal/assemblyscript"
+	internalsys "github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 const (

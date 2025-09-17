@@ -4,8 +4,7 @@ import (
 	"context"
 	_ "embed"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/imports/assemblyscript"
+	"github.com/ignis-runtime/wazero"
 )
 
 // This shows how to instantiate AssemblyScript's special imports.
@@ -17,7 +16,7 @@ func Example_instantiate() {
 
 	// This adds the "env" module to the runtime, with AssemblyScript's special
 	// function imports.
-	assemblyscript.MustInstantiate(ctx, r)
+	MustInstantiate(ctx, r)
 
 	// Output:
 }
@@ -37,7 +36,7 @@ func Example_functionExporter() {
 		Export("get_int")
 
 	// Now, add AssemblyScript special function imports into it.
-	assemblyscript.NewFunctionExporter().
+	NewFunctionExporter().
 		WithAbortMessageDisabled().
 		ExportFunctions(envBuilder)
 

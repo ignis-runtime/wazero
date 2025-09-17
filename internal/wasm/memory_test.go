@@ -8,9 +8,9 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestMemoryPageConsts(t *testing.T) {

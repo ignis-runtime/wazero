@@ -3,7 +3,7 @@ package sock
 import (
 	"context"
 
-	"github.com/ASparkOfFire/wazero/internal/sock"
+	"github.com/ignis-runtime/wazero/internal/sock"
 )
 
 // Config configures the host to open TCP sockets and allows guest access to

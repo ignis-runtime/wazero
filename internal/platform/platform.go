@@ -7,8 +7,8 @@ package platform
 import (
 	"runtime"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
 )
 
 // CompilerSupported includes constraints here and also the assembler.

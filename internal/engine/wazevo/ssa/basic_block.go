@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
 )
 
 // BasicBlock represents the Basic Block of an SSA function.

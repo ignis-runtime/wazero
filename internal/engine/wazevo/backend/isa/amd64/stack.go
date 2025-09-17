@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"unsafe"
 
-	"github.com/ASparkOfFire/wazero/internal/wasmdebug"
+	"github.com/ignis-runtime/wazero/internal/wasmdebug"
 )
 
 func stackView(rbp, top uintptr) []byte {

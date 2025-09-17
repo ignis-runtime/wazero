@@ -3,8 +3,8 @@ package wazero
 import (
 	"context"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // HostFunctionBuilder defines a host function (in Go), so that a

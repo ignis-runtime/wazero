@@ -4,10 +4,10 @@ import (
 	"context"
 	"io"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // randomGet is the WASI function named RandomGetName which writes random

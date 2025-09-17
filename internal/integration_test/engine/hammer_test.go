@@ -5,14 +5,14 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	"github.com/ASparkOfFire/wazero/internal/testing/binaryencoding"
-	"github.com/ASparkOfFire/wazero/internal/testing/hammer"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero/internal/testing/binaryencoding"
+	"github.com/ignis-runtime/wazero/internal/testing/hammer"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 var hammers = map[string]testCase{

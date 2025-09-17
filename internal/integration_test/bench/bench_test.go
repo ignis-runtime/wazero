@@ -8,10 +8,10 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/imports/wasi_snapshot_preview1"
+	"github.com/ignis-runtime/wazero/internal/platform"
 )
 
 type arbitrary struct{}

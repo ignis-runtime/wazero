@@ -4,7 +4,7 @@
 package experimental
 
 import (
-	"github.com/ASparkOfFire/wazero/api"
+	"github.com/ignis-runtime/wazero/api"
 )
 
 // InternalModule is an api.Module that exposes additional

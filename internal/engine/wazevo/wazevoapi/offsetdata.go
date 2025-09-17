@@ -1,7 +1,7 @@
 package wazevoapi
 
 import (
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 const (

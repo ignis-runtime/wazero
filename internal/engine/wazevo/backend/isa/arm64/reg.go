@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/regalloc"
 )
 
 // Arm64-specific registers.

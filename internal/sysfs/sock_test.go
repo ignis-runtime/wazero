@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/fsapi"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/fsapi"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestTcpConnFile_Write(t *testing.T) {

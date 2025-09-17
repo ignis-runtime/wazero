@@ -5,8 +5,6 @@ import (
 	_ "embed"
 	"log"
 	"os"
-
-	"github.com/ASparkOfFire/wazero"
 )
 
 // This is a basic example of using the file system compilation cache via wazero.NewCompilationCacheWithDir.
@@ -24,7 +22,7 @@ func Example_compileCache() {
 	// Create a runtime config which shares a compilation cache directory.
 	cache := newCompilationCacheWithDir(cacheDir)
 	defer cache.Close(ctx)
-	config := wazero.NewRuntimeConfig().WithCompilationCache(cache)
+	config := NewRuntimeConfig().WithCompilationCache(cache)
 
 	// Using the same wazero.CompilationCache instance allows the in-memory cache sharing.
 	newRuntimeCompileClose(ctx, config)
@@ -39,8 +37,8 @@ func Example_compileCache() {
 	//
 }
 
-func newCompilationCacheWithDir(cacheDir string) wazero.CompilationCache {
-	cache, err := wazero.NewCompilationCacheWithDir(cacheDir)
+func newCompilationCacheWithDir(cacheDir string) CompilationCache {
+	cache, err := NewCompilationCacheWithDir(cacheDir)
 	if err != nil {
 		log.Panicln(err)
 	}
@@ -48,8 +46,8 @@ func newCompilationCacheWithDir(cacheDir string) wazero.CompilationCache {
 }
 
 // newRuntimeCompileClose creates a new wazero.Runtime, compile a binary, and then delete the runtime.
-func newRuntimeCompileClose(ctx context.Context, config wazero.RuntimeConfig) {
-	r := wazero.NewRuntimeWithConfig(ctx, config)
+func newRuntimeCompileClose(ctx context.Context, config RuntimeConfig) {
+	r := NewRuntimeWithConfig(ctx, config)
 	defer r.Close(ctx) // This closes everything this Runtime created except the file system cache.
 
 	_, err := r.CompileModule(ctx, addWasm)

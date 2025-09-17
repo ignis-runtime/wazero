@@ -1,9 +1,9 @@
 package logging
 
 import (
-	"github.com/ASparkOfFire/wazero/api"
-	. "github.com/ASparkOfFire/wazero/internal/assemblyscript"
-	"github.com/ASparkOfFire/wazero/internal/logging"
+	"github.com/ignis-runtime/wazero/api"
+	. "github.com/ignis-runtime/wazero/internal/assemblyscript"
+	"github.com/ignis-runtime/wazero/internal/logging"
 )
 
 func isProcFunction(fnd api.FunctionDefinition) bool {

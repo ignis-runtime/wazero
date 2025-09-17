@@ -3,9 +3,9 @@ package bench
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/internal/wasm/binary"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasm/binary"
 )
 
 func BenchmarkCodec(b *testing.B) {

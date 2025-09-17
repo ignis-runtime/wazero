@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental/wazerotest"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental/wazerotest"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func Test_callOnPanic(t *testing.T) {

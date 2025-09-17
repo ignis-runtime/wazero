@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 // TCPSock is a pseudo-file representing a TCP socket.

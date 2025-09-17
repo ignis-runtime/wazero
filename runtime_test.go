@@ -8,15 +8,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/filecache"
-	"github.com/ASparkOfFire/wazero/internal/leb128"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	"github.com/ASparkOfFire/wazero/internal/testing/binaryencoding"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/internal/filecache"
+	"github.com/ignis-runtime/wazero/internal/leb128"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero/internal/testing/binaryencoding"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 type arbitrary struct{}

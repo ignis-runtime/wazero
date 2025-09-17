@@ -6,8 +6,8 @@ import (
 	"io/fs"
 	"os"
 
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/sys"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // Note: go:build constraints must be the same as /sys.stat_unsupported.go for

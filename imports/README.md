@@ -10,7 +10,7 @@ languages or shared compiler toolchains.
 Note: You may not see a language listed here because it either works without
 host imports, or it uses WASI. Refer to https://wazero.io/languages/ for more.
 
-Please [open an issue](https://github.com/ASparkOfFire/wazero/issues/new) if you
+Please [open an issue](https://github.com/ignis-runtime/wazero/issues/new) if you
 would like to see support for another compiled language or toolchain.
 
 ## Overview

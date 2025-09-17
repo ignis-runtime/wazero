@@ -4,8 +4,8 @@ import (
 	"math"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestInstruction_String(t *testing.T) {

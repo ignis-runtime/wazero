@@ -7,7 +7,7 @@ import (
 	"os"
 	"path"
 
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 // Link implements the same method as documented on sys.FS

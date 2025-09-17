@@ -5,7 +5,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
 )
 
 // passCalculateImmediateDominators calculates immediate dominators for each basic block.

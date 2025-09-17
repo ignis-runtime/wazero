@@ -6,13 +6,12 @@ import (
 	"math"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/experimental/logging"
-	"github.com/ASparkOfFire/wazero/experimental/wazerotest"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	wasi "github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/experimental/wazerotest"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	wasi "github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 type arbitrary struct{}
@@ -249,7 +248,7 @@ func Test_loggingListener(t *testing.T) {
 	}
 
 	var out bytes.Buffer
-	lf := logging.NewLoggingListenerFactory(&out)
+	lf := NewLoggingListenerFactory(&out)
 	fn := func() {}
 	for _, tt := range tests {
 		tc := tt
@@ -300,7 +299,7 @@ func toNameMap(names []string) wasm.NameMap {
 
 func Test_loggingListener_indentation(t *testing.T) {
 	out := bytes.NewBuffer(nil)
-	lf := logging.NewLoggingListenerFactory(out)
+	lf := NewLoggingListenerFactory(out)
 	m := &wasm.Module{
 		TypeSection:     []wasm.FunctionType{{}},
 		FunctionSection: []wasm.Index{0, 0},
@@ -333,7 +332,7 @@ func BenchmarkLoggingListener(b *testing.B) {
 	)
 
 	function := module.Function(0)
-	factory := logging.NewLoggingListenerFactory(discard{})
+	factory := NewLoggingListenerFactory(discard{})
 	listener := factory.NewFunctionListener(function.Definition())
 
 	stack := []experimental.StackFrame{

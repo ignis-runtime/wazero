@@ -5,17 +5,17 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/ASparkOfFire/wazero/api"
-	experimentalapi "github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/engine/interpreter"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo"
-	"github.com/ASparkOfFire/wazero/internal/expctxkeys"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	internalsock "github.com/ASparkOfFire/wazero/internal/sock"
-	internalsys "github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	binaryformat "github.com/ASparkOfFire/wazero/internal/wasm/binary"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/api"
+	experimentalapi "github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/internal/engine/interpreter"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo"
+	"github.com/ignis-runtime/wazero/internal/expctxkeys"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	internalsock "github.com/ignis-runtime/wazero/internal/sock"
+	internalsys "github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	binaryformat "github.com/ignis-runtime/wazero/internal/wasm/binary"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // Runtime allows embedding of WebAssembly modules.

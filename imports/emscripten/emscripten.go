@@ -16,10 +16,10 @@ import (
 	"context"
 	"strings"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	internal "github.com/ASparkOfFire/wazero/internal/emscripten"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	internal "github.com/ignis-runtime/wazero/internal/emscripten"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 const i32 = wasm.ValueTypeI32

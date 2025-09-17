@@ -7,8 +7,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
 )
 
 // greetWasm was compiled using `cargo build --release --target wasm32-unknown-unknown`

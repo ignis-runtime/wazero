@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
 )
 
 type operand struct {

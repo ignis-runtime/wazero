@@ -1,9 +1,9 @@
 package wasm
 
 import (
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/internalapi"
-	"github.com/ASparkOfFire/wazero/internal/wasmdebug"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/internalapi"
+	"github.com/ignis-runtime/wazero/internal/wasmdebug"
 )
 
 // ImportedFunctions returns the definitions of each imported function.

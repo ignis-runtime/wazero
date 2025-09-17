@@ -3,7 +3,7 @@ package wasip1
 import (
 	"fmt"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 // Errno is neither uint16 nor an alias for parity with wasm.ValueType.

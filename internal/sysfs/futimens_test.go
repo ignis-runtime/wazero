@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestUtimens(t *testing.T) {

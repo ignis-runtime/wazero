@@ -3,7 +3,7 @@ package interpreter
 import (
 	"fmt"
 
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // signature represents how a Wasm opcode

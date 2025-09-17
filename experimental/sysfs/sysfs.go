@@ -4,12 +4,12 @@
 // The name sysfs was chosen because wazero's public API has a "sys" package,
 // which was named after https://github.com/golang/sys.
 //
-// This tracked in https://github.com/ASparkOfFire/wazero/issues/1013
+// This tracked in https://github.com/ignis-runtime/wazero/issues/1013
 package sysfs
 
 import (
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
 )
 
 // AdaptFS adapts the input to sys.FS. Use DirFS instead of adapting an

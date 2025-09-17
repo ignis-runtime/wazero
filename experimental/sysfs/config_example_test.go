@@ -4,8 +4,7 @@ import (
 	"io/fs"
 	"testing/fstest"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/experimental/sysfs"
+	"github.com/ignis-runtime/wazero"
 )
 
 var moduleConfig wazero.ModuleConfig
@@ -16,31 +15,31 @@ func ExampleAdaptFS() {
 		"a/b.txt": &fstest.MapFile{Mode: 0o666},
 		".":       &fstest.MapFile{Mode: 0o777 | fs.ModeDir},
 	}
-	root := &sysfs.AdaptFS{FS: m}
+	root := &AdaptFS{FS: m}
 
 	moduleConfig = wazero.NewModuleConfig().
-		WithFSConfig(wazero.NewFSConfig().(sysfs.FSConfig).WithSysFSMount(root, "/"))
+		WithFSConfig(wazero.NewFSConfig().(FSConfig).WithSysFSMount(root, "/"))
 
 	// Output:
 }
 
 // This example shows how to configure a sysfs.DirFS
 func ExampleDirFS() {
-	root := sysfs.DirFS(".")
+	root := DirFS(".")
 
 	moduleConfig = wazero.NewModuleConfig().
-		WithFSConfig(wazero.NewFSConfig().(sysfs.FSConfig).WithSysFSMount(root, "/"))
+		WithFSConfig(wazero.NewFSConfig().(FSConfig).WithSysFSMount(root, "/"))
 
 	// Output:
 }
 
 // This example shows how to configure a sysfs.ReadFS
 func ExampleReadFS() {
-	root := sysfs.DirFS(".")
-	readOnly := &sysfs.ReadFS{FS: root}
+	root := DirFS(".")
+	readOnly := &ReadFS{FS: root}
 
 	moduleConfig = wazero.NewModuleConfig().
-		WithFSConfig(wazero.NewFSConfig().(sysfs.FSConfig).WithSysFSMount(readOnly, "/"))
+		WithFSConfig(wazero.NewFSConfig().(FSConfig).WithSysFSMount(readOnly, "/"))
 
 	// Output:
 }

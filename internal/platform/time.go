@@ -4,7 +4,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 const (

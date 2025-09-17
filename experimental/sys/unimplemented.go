@@ -3,7 +3,7 @@ package sys
 import (
 	"io/fs"
 
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // UnimplementedFS is an FS that returns ENOSYS for all functions,

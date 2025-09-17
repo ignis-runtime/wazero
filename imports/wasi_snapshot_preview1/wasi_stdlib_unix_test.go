@@ -14,11 +14,10 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 func Test_NonblockingFile(t *testing.T) {
@@ -127,7 +126,7 @@ func Test_NonblockGo(t *testing.T) {
 					require.NoError(t, r.Close(testCtx))
 				}()
 
-				_, err := wasi_snapshot_preview1.Instantiate(testCtx, r)
+				_, err := Instantiate(testCtx, r)
 				require.NoError(t, err)
 
 				compiled, err := r.CompileModule(testCtx, wasmGo)

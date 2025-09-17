@@ -3,7 +3,7 @@ package bench
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 func BenchmarkMemory(b *testing.B) {

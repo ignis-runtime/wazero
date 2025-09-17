@@ -7,13 +7,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/fstest"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	internalsys "github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/fstest"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	internalsys "github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 func TestRuntimeConfig(t *testing.T) {

@@ -3,7 +3,7 @@ package sysfs
 import (
 	"io"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 func adjustReaddirErr(f sys.File, isClosed bool, err error) sys.Errno {

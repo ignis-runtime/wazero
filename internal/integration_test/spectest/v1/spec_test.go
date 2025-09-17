@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/integration_test/spectest"
-	"github.com/ASparkOfFire/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/integration_test/spectest"
+	"github.com/ignis-runtime/wazero/internal/platform"
 )
 
 func TestCompiler(t *testing.T) {

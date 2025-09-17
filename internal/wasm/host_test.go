@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	. "github.com/ASparkOfFire/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	. "github.com/ignis-runtime/wazero/internal/wasip1"
 )
 
 func argsSizesGet(ctx context.Context, mod api.Module, resultArgc, resultArgvBufSize uint32) uint32 {

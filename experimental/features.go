@@ -1,6 +1,6 @@
 package experimental
 
-import "github.com/ASparkOfFire/wazero/api"
+import "github.com/ignis-runtime/wazero/api"
 
 // CoreFeaturesThreads enables threads instructions ("threads").
 //

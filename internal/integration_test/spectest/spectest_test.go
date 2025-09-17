@@ -5,9 +5,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/moremath"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/moremath"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 func Test_f32Equal(t *testing.T) {

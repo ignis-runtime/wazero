@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/fs"
 
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // FileType is fs.FileMode masked on fs.ModeType. For example, zero is a

@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/internal/platform"
 )
 
 func TestMemoryLeak(t *testing.T) {

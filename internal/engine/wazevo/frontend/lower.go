@@ -7,11 +7,11 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
-	"github.com/ASparkOfFire/wazero/internal/leb128"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/leb128"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 type (

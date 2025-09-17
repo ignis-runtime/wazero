@@ -6,7 +6,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 func datasync(f *os.File) sys.Errno {

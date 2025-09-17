@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestMain(t *testing.T, main func(), args ...string) (stdout, stderr string) {

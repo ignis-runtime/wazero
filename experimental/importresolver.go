@@ -3,8 +3,8 @@ package experimental
 import (
 	"context"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/expctxkeys"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/expctxkeys"
 )
 
 // ImportResolver is an experimental func type that, if set,

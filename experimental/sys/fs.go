@@ -3,7 +3,7 @@ package sys
 import (
 	"io/fs"
 
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // FS is a writeable fs.FS bridge backed by syscall functions needed for ABI

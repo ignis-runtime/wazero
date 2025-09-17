@@ -3,8 +3,8 @@ package wasm
 import (
 	"context"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
 )
 
 // Engine is a Store-scoped mechanism to compile functions declared or imported by a module.

@@ -6,15 +6,14 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/testing/proxy"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/testing/proxy"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // configArgsEnviron ensures the result data are the same between args and ENV.
@@ -427,7 +426,7 @@ func Benchmark_fdWrite(b *testing.B) {
 
 // instantiateProxyModule instantiates a guest that re-exports WASI functions.
 func instantiateProxyModule(r wazero.Runtime, config wazero.ModuleConfig) (api.Module, error) {
-	wasiModuleCompiled, err := wasi_snapshot_preview1.NewBuilder(r).Compile(testCtx)
+	wasiModuleCompiled, err := NewBuilder(r).Compile(testCtx)
 	if err != nil {
 		return nil, err
 	}
@@ -436,7 +435,7 @@ func instantiateProxyModule(r wazero.Runtime, config wazero.ModuleConfig) (api.M
 		return nil, err
 	}
 
-	proxyBin := proxy.NewModuleBinary(wasi_snapshot_preview1.ModuleName, wasiModuleCompiled)
+	proxyBin := proxy.NewModuleBinary(ModuleName, wasiModuleCompiled)
 
 	proxyCompiled, err := r.CompileModule(testCtx, proxyBin)
 	if err != nil {

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/ASparkOfFire/wazero/internal/internalapi"
+	"github.com/ignis-runtime/wazero/internal/internalapi"
 )
 
 // ExternType classifies imports and exports with their respective types.

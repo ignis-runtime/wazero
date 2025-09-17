@@ -10,10 +10,10 @@ import (
 	"testing"
 	gofstest "testing/fstest"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
-	testfs "github.com/ASparkOfFire/wazero/internal/testing/fs"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
+	testfs "github.com/ignis-runtime/wazero/internal/testing/fs"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 //go:embed testdata

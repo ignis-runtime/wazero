@@ -2,8 +2,6 @@ package experimental_test
 
 import (
 	"context"
-
-	"github.com/ASparkOfFire/wazero/experimental"
 )
 
 var ctx context.Context
@@ -11,9 +9,9 @@ var ctx context.Context
 // This shows how to implement a custom cleanup task on close.
 func Example_closeNotifier() {
 	closeCh := make(chan struct{})
-	ctx = experimental.WithCloseNotifier(
+	ctx = WithCloseNotifier(
 		context.Background(),
-		experimental.CloseNotifyFunc(func(context.Context, uint32) { close(closeCh) }),
+		CloseNotifyFunc(func(context.Context, uint32) { close(closeCh) }),
 	)
 
 	// ... create module, do some work. Sometime later in another goroutine:

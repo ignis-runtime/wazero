@@ -3,8 +3,8 @@ package testcases
 import (
 	"math"
 
-	"github.com/ASparkOfFire/wazero/internal/leb128"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/leb128"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 const ExportedFunctionName = "f"

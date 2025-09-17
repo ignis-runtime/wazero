@@ -7,10 +7,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/imports/wasi_snapshot_preview1"
 )
 
 var (
@@ -69,7 +68,7 @@ func Example_importResolver() {
 			log.Panicln(err)
 		}
 
-		ctx = experimental.WithImportResolver(ctx, func(name string) api.Module {
+		ctx = WithImportResolver(ctx, func(name string) api.Module {
 			if name == inoutDispatcherModuleName {
 				return dispatcherInstance
 			}

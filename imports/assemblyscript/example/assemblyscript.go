@@ -8,8 +8,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/imports/assemblyscript"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/imports/assemblyscript"
 )
 
 // asWasm compiled using `npm install && npm run build`

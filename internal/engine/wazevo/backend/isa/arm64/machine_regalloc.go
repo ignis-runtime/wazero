@@ -3,8 +3,8 @@ package arm64
 // This file implements the interfaces required for register allocations. See backend.RegAllocFunctionMachine.
 
 import (
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
 )
 
 // regAllocFn implements regalloc.Function.

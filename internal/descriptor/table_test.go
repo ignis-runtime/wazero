@@ -3,9 +3,8 @@ package descriptor_test
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/descriptor"
-	"github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestFileTable(t *testing.T) {
@@ -128,24 +127,24 @@ func BenchmarkFileTableLookup(b *testing.B) {
 func Test_sizeOfTable(t *testing.T) {
 	tests := []struct {
 		name         string
-		operation    func(*descriptor.Table[int32, string])
+		operation    func(*Table[int32, string])
 		expectedSize int
 	}{
 		{
 			name:         "empty table",
-			operation:    func(table *descriptor.Table[int32, string]) {},
+			operation:    func(table *Table[int32, string]) {},
 			expectedSize: 0,
 		},
 		{
 			name: "1 insert",
-			operation: func(table *descriptor.Table[int32, string]) {
+			operation: func(table *Table[int32, string]) {
 				table.Insert("a")
 			},
 			expectedSize: 1,
 		},
 		{
 			name: "32 inserts",
-			operation: func(table *descriptor.Table[int32, string]) {
+			operation: func(table *Table[int32, string]) {
 				for i := 0; i < 32; i++ {
 					table.Insert("a")
 				}
@@ -154,7 +153,7 @@ func Test_sizeOfTable(t *testing.T) {
 		},
 		{
 			name: "257 inserts",
-			operation: func(table *descriptor.Table[int32, string]) {
+			operation: func(table *Table[int32, string]) {
 				for i := 0; i < 257; i++ {
 					table.Insert("a")
 				}
@@ -163,28 +162,28 @@ func Test_sizeOfTable(t *testing.T) {
 		},
 		{
 			name: "1 insert at 63",
-			operation: func(table *descriptor.Table[int32, string]) {
+			operation: func(table *Table[int32, string]) {
 				table.InsertAt("a", 63)
 			},
 			expectedSize: 1,
 		},
 		{
 			name: "1 insert at 64",
-			operation: func(table *descriptor.Table[int32, string]) {
+			operation: func(table *Table[int32, string]) {
 				table.InsertAt("a", 64)
 			},
 			expectedSize: 2,
 		},
 		{
 			name: "1 insert at 257",
-			operation: func(table *descriptor.Table[int32, string]) {
+			operation: func(table *Table[int32, string]) {
 				table.InsertAt("a", 257)
 			},
 			expectedSize: 5,
 		},
 		{
 			name: "insert at until 320",
-			operation: func(table *descriptor.Table[int32, string]) {
+			operation: func(table *Table[int32, string]) {
 				for i := int32(0); i < 320; i++ {
 					table.InsertAt("a", i)
 				}
@@ -196,10 +195,10 @@ func Test_sizeOfTable(t *testing.T) {
 		tc := tt
 
 		t.Run(tc.name, func(t *testing.T) {
-			table := new(descriptor.Table[int32, string])
+			table := new(Table[int32, string])
 			tc.operation(table)
-			require.Equal(t, tc.expectedSize, len(descriptor.Masks(table)))
-			require.Equal(t, tc.expectedSize*64, len(descriptor.Items(table)))
+			require.Equal(t, tc.expectedSize, len(Masks(table)))
+			require.Equal(t, tc.expectedSize*64, len(Items(table)))
 		})
 	}
 }

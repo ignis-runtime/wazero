@@ -4,9 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/experimental/sock"
-	internalsock "github.com/ASparkOfFire/wazero/internal/sock"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	internalsock "github.com/ignis-runtime/wazero/internal/sock"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 type arbitrary struct{}
@@ -17,7 +16,7 @@ var testCtx = context.WithValue(context.Background(), arbitrary{}, "arbitrary")
 func TestWithSockConfig(t *testing.T) {
 	tests := []struct {
 		name     string
-		sockCfg  sock.Config
+		sockCfg  Config
 		expected bool
 	}{
 		{
@@ -26,12 +25,12 @@ func TestWithSockConfig(t *testing.T) {
 		},
 		{
 			name:     "returns input when sockCfg empty",
-			sockCfg:  sock.NewConfig(),
+			sockCfg:  NewConfig(),
 			expected: false,
 		},
 		{
 			name:     "decorates with sockCfg",
-			sockCfg:  sock.NewConfig().WithTCPListener("", 0),
+			sockCfg:  NewConfig().WithTCPListener("", 0),
 			expected: true,
 		},
 	}
@@ -39,7 +38,7 @@ func TestWithSockConfig(t *testing.T) {
 	for _, tt := range tests {
 		tc := tt
 		t.Run(tc.name, func(t *testing.T) {
-			if decorated := sock.WithConfig(testCtx, tc.sockCfg); tc.expected {
+			if decorated := WithConfig(testCtx, tc.sockCfg); tc.expected {
 				require.NotNil(t, decorated.Value(internalsock.ConfigKey{}))
 			} else {
 				require.Same(t, testCtx, decorated)

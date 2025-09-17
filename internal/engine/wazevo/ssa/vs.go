@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/wazevoapi"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/wazevoapi"
 )
 
 // Variable is a unique identifier for a source program's variable and will correspond to

@@ -4,9 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/expctxkeys"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/expctxkeys"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 type arbitrary struct{}
@@ -17,7 +16,7 @@ var testCtx = context.WithValue(context.Background(), arbitrary{}, "arbitrary")
 func TestWithCloseNotifier(t *testing.T) {
 	tests := []struct {
 		name         string
-		notification experimental.CloseNotifier
+		notification CloseNotifier
 		expected     bool
 	}{
 		{
@@ -26,7 +25,7 @@ func TestWithCloseNotifier(t *testing.T) {
 		},
 		{
 			name:         "decorates with notification",
-			notification: experimental.CloseNotifyFunc(func(context.Context, uint32) {}),
+			notification: CloseNotifyFunc(func(context.Context, uint32) {}),
 			expected:     true,
 		},
 	}
@@ -34,7 +33,7 @@ func TestWithCloseNotifier(t *testing.T) {
 	for _, tt := range tests {
 		tc := tt
 		t.Run(tc.name, func(t *testing.T) {
-			if decorated := experimental.WithCloseNotifier(testCtx, tc.notification); tc.expected {
+			if decorated := WithCloseNotifier(testCtx, tc.notification); tc.expected {
 				require.NotNil(t, decorated.Value(expctxkeys.CloseNotifierKey{}))
 			} else {
 				require.Same(t, testCtx, decorated)

@@ -3,9 +3,9 @@ package wazero
 import (
 	"io/fs"
 
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
 )
 
 // FSConfig configures filesystem paths the embedding host allows the wasm

@@ -11,10 +11,10 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/internal/internalapi"
-	"github.com/ASparkOfFire/wazero/internal/wasmruntime"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/internal/internalapi"
+	"github.com/ignis-runtime/wazero/internal/wasmruntime"
 )
 
 const (

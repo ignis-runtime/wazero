@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/internal/platform"
-	"github.com/ASparkOfFire/wazero/internal/testing/dwarftestdata"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/imports/wasi_snapshot_preview1"
+	"github.com/ignis-runtime/wazero/internal/platform"
+	"github.com/ignis-runtime/wazero/internal/testing/dwarftestdata"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 var dwarfTests = map[string]testCase{

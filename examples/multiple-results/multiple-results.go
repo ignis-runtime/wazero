@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
 )
 
 // main implements functions with multiple returns values, using both an

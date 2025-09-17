@@ -5,7 +5,7 @@ package sysfs
 import (
 	"os"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 const (

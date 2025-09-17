@@ -3,8 +3,8 @@ package main
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/version"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/version"
 )
 
 // TestGetWazeroVersion ensures that GetWazeroVersion returns the version of wazero in the go.mod in the

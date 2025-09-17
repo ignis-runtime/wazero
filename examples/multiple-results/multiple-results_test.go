@@ -3,8 +3,8 @@ package main
 import (
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/maintester"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/testing/maintester"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 // Test_main ensures the following will work:

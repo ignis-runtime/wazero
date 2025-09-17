@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/internalapi"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/internalapi"
 )
 
 // LookupFunction looks up the table by the given index, and returns the api.Function implementation if found,

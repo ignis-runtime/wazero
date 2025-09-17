@@ -3,7 +3,7 @@ package experimental
 import (
 	"context"
 
-	"github.com/ASparkOfFire/wazero/internal/expctxkeys"
+	"github.com/ignis-runtime/wazero/internal/expctxkeys"
 )
 
 // MemoryAllocator is a memory allocation hook,

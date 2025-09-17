@@ -1,8 +1,8 @@
 package wasm
 
 import (
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/internal/internalapi"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/internalapi"
 )
 
 // ImportedMemories implements the same method as documented on wazero.CompiledModule.

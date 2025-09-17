@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	internalsys "github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
-	testfs "github.com/ASparkOfFire/wazero/internal/testing/fs"
-	"github.com/ASparkOfFire/wazero/internal/testing/hammer"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	internalsys "github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
+	testfs "github.com/ignis-runtime/wazero/internal/testing/fs"
+	"github.com/ignis-runtime/wazero/internal/testing/hammer"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestModuleInstance_String(t *testing.T) {

@@ -5,12 +5,12 @@ import (
 	"context"
 	"io"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	aslogging "github.com/ASparkOfFire/wazero/internal/assemblyscript/logging"
-	"github.com/ASparkOfFire/wazero/internal/logging"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
-	wasilogging "github.com/ASparkOfFire/wazero/internal/wasip1/logging"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental"
+	aslogging "github.com/ignis-runtime/wazero/internal/assemblyscript/logging"
+	"github.com/ignis-runtime/wazero/internal/logging"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
+	wasilogging "github.com/ignis-runtime/wazero/internal/wasip1/logging"
 )
 
 type Writer interface {

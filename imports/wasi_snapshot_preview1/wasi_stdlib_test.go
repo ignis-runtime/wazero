@@ -17,15 +17,14 @@ import (
 	gofstest "testing/fstest"
 	"time"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	experimentalsock "github.com/ASparkOfFire/wazero/experimental/sock"
-	"github.com/ASparkOfFire/wazero/imports/wasi_snapshot_preview1"
-	"github.com/ASparkOfFire/wazero/internal/fsapi"
-	"github.com/ASparkOfFire/wazero/internal/fstest"
-	internalsys "github.com/ASparkOfFire/wazero/internal/sys"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	experimentalsock "github.com/ignis-runtime/wazero/experimental/sock"
+	"github.com/ignis-runtime/wazero/internal/fsapi"
+	"github.com/ignis-runtime/wazero/internal/fstest"
+	internalsys "github.com/ignis-runtime/wazero/internal/sys"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 // sleepALittle directly slows down test execution. So, use this sparingly and
@@ -245,7 +244,7 @@ func compileAndRunWithPreStart(t *testing.T, ctx context.Context, config wazero.
 	r := wazero.NewRuntimeWithConfig(ctx, runtimeCfg)
 	defer r.Close(ctx)
 
-	_, err := wasi_snapshot_preview1.Instantiate(ctx, r)
+	_, err := Instantiate(ctx, r)
 	require.NoError(t, err)
 
 	compiled, err := r.CompileModule(ctx, bin)
@@ -523,7 +522,7 @@ func testStdin(t *testing.T, bin []byte) {
 			require.NoError(t, r.Close(testCtx))
 		}()
 
-		_, err := wasi_snapshot_preview1.Instantiate(testCtx, r)
+		_, err := Instantiate(testCtx, r)
 		require.NoError(t, err)
 
 		compiled, err := r.CompileModule(testCtx, wasmGo)
@@ -553,7 +552,7 @@ func Test_LargeStdout(t *testing.T) {
 			require.NoError(t, r.Close(testCtx))
 		}()
 
-		_, err := wasi_snapshot_preview1.Instantiate(testCtx, r)
+		_, err := Instantiate(testCtx, r)
 		require.NoError(t, err)
 
 		compiled, err := r.CompileModule(testCtx, wasmGo)

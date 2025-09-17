@@ -8,10 +8,9 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	"github.com/ASparkOfFire/wazero/internal/fstest"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	"github.com/ignis-runtime/wazero/internal/fstest"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestFSFileReaddir(t *testing.T) {
@@ -20,8 +19,8 @@ func TestFSFileReaddir(t *testing.T) {
 	tmpDir := t.TempDir()
 	require.NoError(t, fstest.WriteTestFiles(tmpDir))
 	dirFS := os.DirFS(tmpDir)
-	maskFS := &sysfs.MaskOsFS{Fs: dirFS}
-	maskFSZeroIno := &sysfs.MaskOsFS{Fs: os.DirFS(tmpDir), ZeroIno: true}
+	maskFS := &MaskOsFS{Fs: dirFS}
+	maskFSZeroIno := &MaskOsFS{Fs: os.DirFS(tmpDir), ZeroIno: true}
 
 	expectIno := runtime.GOOS != "windows"
 
@@ -40,7 +39,7 @@ func TestFSFileReaddir(t *testing.T) {
 		tc := tc
 
 		t.Run(tc.name, func(t *testing.T) {
-			dotF, errno := sysfs.OpenFSFile(tc.fs, ".", sys.O_RDONLY, 0)
+			dotF, errno := OpenFSFile(tc.fs, ".", sys.O_RDONLY, 0)
 			require.EqualErrno(t, 0, errno)
 			defer dotF.Close()
 
@@ -74,7 +73,7 @@ func TestFSFileReaddir(t *testing.T) {
 				require.EqualErrno(t, sys.EBADF, errno)
 			})
 
-			fileF, errno := sysfs.OpenFSFile(tc.fs, "empty.txt", sys.O_RDONLY, 0)
+			fileF, errno := OpenFSFile(tc.fs, "empty.txt", sys.O_RDONLY, 0)
 			require.EqualErrno(t, 0, errno)
 			defer fileF.Close()
 
@@ -83,7 +82,7 @@ func TestFSFileReaddir(t *testing.T) {
 				require.EqualErrno(t, sys.EBADF, errno)
 			})
 
-			dirF, errno := sysfs.OpenFSFile(tc.fs, "dir", sys.O_RDONLY, 0)
+			dirF, errno := OpenFSFile(tc.fs, "dir", sys.O_RDONLY, 0)
 			require.EqualErrno(t, 0, errno)
 			defer dirF.Close()
 
@@ -122,7 +121,7 @@ func TestFSFileReaddir(t *testing.T) {
 				require.EqualErrno(t, 0, errno)
 			})
 
-			subdirF, errno := sysfs.OpenFSFile(tc.fs, "sub", sys.O_RDONLY, 0)
+			subdirF, errno := OpenFSFile(tc.fs, "sub", sys.O_RDONLY, 0)
 			require.EqualErrno(t, 0, errno)
 			defer subdirF.Close()
 

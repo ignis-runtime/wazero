@@ -7,9 +7,9 @@ import (
 	"math"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/backend/regalloc"
-	"github.com/ASparkOfFire/wazero/internal/engine/wazevo/ssa"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/backend/regalloc"
+	"github.com/ignis-runtime/wazero/internal/engine/wazevo/ssa"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func Test_dummy(t *testing.T) {

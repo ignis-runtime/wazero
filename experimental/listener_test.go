@@ -5,17 +5,16 @@ import (
 	_ "embed"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/experimental/wazerotest"
-	"github.com/ASparkOfFire/wazero/internal/testing/binaryencoding"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental/wazerotest"
+	"github.com/ignis-runtime/wazero/internal/testing/binaryencoding"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // compile-time check to ensure recorder implements FunctionListenerFactory
-var _ experimental.FunctionListenerFactory = &recorder{}
+var _ FunctionListenerFactory = &recorder{}
 
 type recorder struct {
 	m           map[string]struct{}
@@ -24,7 +23,7 @@ type recorder struct {
 	abortNames  []string
 }
 
-func (r *recorder) Before(ctx context.Context, _ api.Module, def api.FunctionDefinition, _ []uint64, _ experimental.StackIterator) {
+func (r *recorder) Before(ctx context.Context, _ api.Module, def api.FunctionDefinition, _ []uint64, _ StackIterator) {
 	r.beforeNames = append(r.beforeNames, def.DebugName())
 }
 
@@ -36,7 +35,7 @@ func (r *recorder) Abort(_ context.Context, _ api.Module, def api.FunctionDefini
 	r.abortNames = append(r.abortNames, def.DebugName())
 }
 
-func (r *recorder) NewFunctionListener(definition api.FunctionDefinition) experimental.FunctionListener {
+func (r *recorder) NewFunctionListener(definition api.FunctionDefinition) FunctionListener {
 	r.m[definition.Name()] = struct{}{}
 	return r
 }
@@ -44,7 +43,7 @@ func (r *recorder) NewFunctionListener(definition api.FunctionDefinition) experi
 func TestFunctionListenerFactory(t *testing.T) {
 	// Set context to one that has an experimental listener
 	factory := &recorder{m: map[string]struct{}{}}
-	ctx := experimental.WithFunctionListenerFactory(context.Background(), factory)
+	ctx := WithFunctionListenerFactory(context.Background(), factory)
 
 	// Define a module with two functions
 	bin := binaryencoding.EncodeModule(&wasm.Module{
@@ -114,14 +113,14 @@ func TestMultiFunctionListenerFactory(t *testing.T) {
 		wazerotest.NewFunction(func(ctx context.Context, mod api.Module, value int32) {}),
 	)
 
-	stack := []experimental.StackFrame{
+	stack := []StackFrame{
 		{Function: module.Function(0), Params: []uint64{1}},
 		{Function: module.Function(1), Params: []uint64{2}},
 		{Function: module.Function(2), Params: []uint64{3}},
 	}
 
 	n := 0
-	f := func(ctx context.Context, mod api.Module, def api.FunctionDefinition, params []uint64, stackIterator experimental.StackIterator) {
+	f := func(ctx context.Context, mod api.Module, def api.FunctionDefinition, params []uint64, stackIterator StackIterator) {
 		n++
 		i := 0
 		for stackIterator.Next() {
@@ -132,18 +131,18 @@ func TestMultiFunctionListenerFactory(t *testing.T) {
 		}
 	}
 
-	factory := experimental.MultiFunctionListenerFactory(
-		experimental.FunctionListenerFactoryFunc(func(def api.FunctionDefinition) experimental.FunctionListener {
-			return experimental.FunctionListenerFunc(f)
+	factory := MultiFunctionListenerFactory(
+		FunctionListenerFactoryFunc(func(def api.FunctionDefinition) FunctionListener {
+			return FunctionListenerFunc(f)
 		}),
-		experimental.FunctionListenerFactoryFunc(func(def api.FunctionDefinition) experimental.FunctionListener {
-			return experimental.FunctionListenerFunc(f)
+		FunctionListenerFactoryFunc(func(def api.FunctionDefinition) FunctionListener {
+			return FunctionListenerFunc(f)
 		}),
 	)
 
 	function := module.Function(0).Definition()
 	listener := factory.NewFunctionListener(function)
-	listener.Before(context.Background(), module, function, stack[2].Params, experimental.NewStackIterator(stack...))
+	listener.Before(context.Background(), module, function, stack[2].Params, NewStackIterator(stack...))
 
 	if n != 2 {
 		t.Errorf("wrong number of function calls: want=2 got=%d", n)
@@ -157,7 +156,7 @@ func BenchmarkMultiFunctionListener(b *testing.B) {
 		wazerotest.NewFunction(func(ctx context.Context, mod api.Module, value int32) {}),
 	)
 
-	stack := []experimental.StackFrame{
+	stack := []StackFrame{
 		{Function: module.Function(0), Params: []uint64{1}},
 		{Function: module.Function(1), Params: []uint64{2}},
 		{Function: module.Function(2), Params: []uint64{3}},
@@ -165,16 +164,16 @@ func BenchmarkMultiFunctionListener(b *testing.B) {
 
 	tests := []struct {
 		scenario string
-		function func(context.Context, api.Module, api.FunctionDefinition, []uint64, experimental.StackIterator)
+		function func(context.Context, api.Module, api.FunctionDefinition, []uint64, StackIterator)
 	}{
 		{
 			scenario: "simple function listener",
-			function: func(ctx context.Context, mod api.Module, def api.FunctionDefinition, params []uint64, stackIterator experimental.StackIterator) {
+			function: func(ctx context.Context, mod api.Module, def api.FunctionDefinition, params []uint64, stackIterator StackIterator) {
 			},
 		},
 		{
 			scenario: "stack iterator",
-			function: func(ctx context.Context, mod api.Module, def api.FunctionDefinition, params []uint64, stackIterator experimental.StackIterator) {
+			function: func(ctx context.Context, mod api.Module, def api.FunctionDefinition, params []uint64, stackIterator StackIterator) {
 				for stackIterator.Next() {
 				}
 			},
@@ -183,17 +182,17 @@ func BenchmarkMultiFunctionListener(b *testing.B) {
 
 	for _, test := range tests {
 		b.Run(test.scenario, func(b *testing.B) {
-			factory := experimental.MultiFunctionListenerFactory(
-				experimental.FunctionListenerFactoryFunc(func(def api.FunctionDefinition) experimental.FunctionListener {
-					return experimental.FunctionListenerFunc(test.function)
+			factory := MultiFunctionListenerFactory(
+				FunctionListenerFactoryFunc(func(def api.FunctionDefinition) FunctionListener {
+					return FunctionListenerFunc(test.function)
 				}),
-				experimental.FunctionListenerFactoryFunc(func(def api.FunctionDefinition) experimental.FunctionListener {
-					return experimental.FunctionListenerFunc(test.function)
+				FunctionListenerFactoryFunc(func(def api.FunctionDefinition) FunctionListener {
+					return FunctionListenerFunc(test.function)
 				}),
 			)
 			function := module.Function(0).Definition()
 			listener := factory.NewFunctionListener(function)
-			experimental.BenchmarkFunctionListener(b.N, module, stack, listener)
+			BenchmarkFunctionListener(b.N, module, stack, listener)
 		})
 	}
 }

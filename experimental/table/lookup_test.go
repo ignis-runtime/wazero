@@ -4,12 +4,11 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental/table"
-	"github.com/ASparkOfFire/wazero/internal/testing/binaryencoding"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/internal/testing/binaryencoding"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 func TestLookupFunction(t *testing.T) {
@@ -48,14 +47,14 @@ func TestLookupFunction(t *testing.T) {
 	require.NotNil(t, m)
 
 	t.Run("v_i32", func(t *testing.T) {
-		f := table.LookupFunction(m, 0, 0, nil, []api.ValueType{i32})
+		f := LookupFunction(m, 0, 0, nil, []api.ValueType{i32})
 		var result [1]uint64
 		err = f.CallWithStack(context.Background(), result[:])
 		require.NoError(t, err)
 		require.Equal(t, uint64(1), result[0])
 	})
 	t.Run("i32i32_i32i32", func(t *testing.T) {
-		f := table.LookupFunction(m, 0, 1, []api.ValueType{i32, i32}, []api.ValueType{i32, i32})
+		f := LookupFunction(m, 0, 1, []api.ValueType{i32, i32}, []api.ValueType{i32, i32})
 		stack := [2]uint64{100, 200}
 		err = f.CallWithStack(context.Background(), stack[:])
 		require.NoError(t, err)
@@ -65,27 +64,27 @@ func TestLookupFunction(t *testing.T) {
 
 	t.Run("panics", func(t *testing.T) {
 		err := require.CapturePanic(func() {
-			table.LookupFunction(m, 0, 2000, nil, []api.ValueType{i32})
+			LookupFunction(m, 0, 2000, nil, []api.ValueType{i32})
 		})
 		require.Equal(t, "invalid table access", err.Error())
 		err = require.CapturePanic(func() {
-			table.LookupFunction(m, 1000, 0, nil, []api.ValueType{i32})
+			LookupFunction(m, 1000, 0, nil, []api.ValueType{i32})
 		})
 		require.Equal(t, "table index out of range", err.Error())
 		err = require.CapturePanic(func() {
-			table.LookupFunction(m, 0, 0, nil, []api.ValueType{api.ValueTypeF32})
+			LookupFunction(m, 0, 0, nil, []api.ValueType{api.ValueTypeF32})
 		})
 		require.Equal(t, "indirect call type mismatch", err.Error())
 		err = require.CapturePanic(func() {
-			table.LookupFunction(m, 0, 0, []api.ValueType{i32}, nil)
+			LookupFunction(m, 0, 0, []api.ValueType{i32}, nil)
 		})
 		require.Equal(t, "indirect call type mismatch", err.Error())
 		err = require.CapturePanic(func() {
-			table.LookupFunction(m, 0, 1, []api.ValueType{i32, i32}, nil)
+			LookupFunction(m, 0, 1, []api.ValueType{i32, i32}, nil)
 		})
 		require.Equal(t, "indirect call type mismatch", err.Error())
 		err = require.CapturePanic(func() {
-			table.LookupFunction(m, 0, 1, []api.ValueType{i32, i32}, []api.ValueType{i32, api.ValueTypeF32})
+			LookupFunction(m, 0, 1, []api.ValueType{i32, i32}, []api.ValueType{i32, api.ValueTypeF32})
 		})
 		require.Equal(t, "indirect call type mismatch", err.Error())
 	})

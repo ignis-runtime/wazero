@@ -3,7 +3,7 @@ package binary
 import (
 	"bytes"
 
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // decodeCustomSection deserializes the data **not** associated with the "name" key in SectionIDCustom.

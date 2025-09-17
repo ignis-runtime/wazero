@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
 )
 
 func TestStdio(t *testing.T) {

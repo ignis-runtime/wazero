@@ -12,16 +12,16 @@ import (
 	"testing/iotest"
 	"unicode/utf16"
 
-	"github.com/ASparkOfFire/wazero"
-	"github.com/ASparkOfFire/wazero/api"
-	. "github.com/ASparkOfFire/wazero/experimental"
-	"github.com/ASparkOfFire/wazero/experimental/logging"
-	"github.com/ASparkOfFire/wazero/experimental/wazerotest"
-	. "github.com/ASparkOfFire/wazero/internal/assemblyscript"
-	"github.com/ASparkOfFire/wazero/internal/testing/proxy"
-	"github.com/ASparkOfFire/wazero/internal/testing/require"
-	"github.com/ASparkOfFire/wazero/internal/u64"
-	"github.com/ASparkOfFire/wazero/sys"
+	"github.com/ignis-runtime/wazero"
+	"github.com/ignis-runtime/wazero/api"
+	. "github.com/ignis-runtime/wazero/experimental"
+	"github.com/ignis-runtime/wazero/experimental/logging"
+	"github.com/ignis-runtime/wazero/experimental/wazerotest"
+	. "github.com/ignis-runtime/wazero/internal/assemblyscript"
+	"github.com/ignis-runtime/wazero/internal/testing/proxy"
+	"github.com/ignis-runtime/wazero/internal/testing/require"
+	"github.com/ignis-runtime/wazero/internal/u64"
+	"github.com/ignis-runtime/wazero/sys"
 )
 
 type arbitrary struct{}

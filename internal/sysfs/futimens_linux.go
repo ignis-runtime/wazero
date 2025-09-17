@@ -7,7 +7,7 @@ import (
 	"unsafe"
 	_ "unsafe"
 
-	experimentalsys "github.com/ASparkOfFire/wazero/experimental/sys"
+	experimentalsys "github.com/ignis-runtime/wazero/experimental/sys"
 )
 
 const (

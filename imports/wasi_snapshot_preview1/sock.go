@@ -3,12 +3,12 @@ package wasi_snapshot_preview1
 import (
 	"context"
 
-	"github.com/ASparkOfFire/wazero/api"
-	"github.com/ASparkOfFire/wazero/experimental/sys"
-	socketapi "github.com/ASparkOfFire/wazero/internal/sock"
-	"github.com/ASparkOfFire/wazero/internal/sysfs"
-	"github.com/ASparkOfFire/wazero/internal/wasip1"
-	"github.com/ASparkOfFire/wazero/internal/wasm"
+	"github.com/ignis-runtime/wazero/api"
+	"github.com/ignis-runtime/wazero/experimental/sys"
+	socketapi "github.com/ignis-runtime/wazero/internal/sock"
+	"github.com/ignis-runtime/wazero/internal/sysfs"
+	"github.com/ignis-runtime/wazero/internal/wasip1"
+	"github.com/ignis-runtime/wazero/internal/wasm"
 )
 
 // sockAccept is the WASI function named SockAcceptName which accepts a new
