@@ -3,10 +3,21 @@ package wasip1
 import "strconv"
 
 const (
-	SockAcceptName   = "sock_accept"
-	SockRecvName     = "sock_recv"
-	SockSendName     = "sock_send"
-	SockShutdownName = "sock_shutdown"
+	SockAcceptName       = "sock_accept"
+	SockRecvName         = "sock_recv"
+	SockSendName         = "sock_send"
+	SockShutdownName     = "sock_shutdown"
+	SockBindName         = "sock_bind"
+	SockConnectName      = "sock_connect"
+	SockGetAddrInfoName  = "sock_getaddrinfo"
+	SockGetLocalAddrName = "sock_getlocaladdr"
+	SockGetPeerAddrName  = "sock_getpeeraddr"
+	SockGetSockOptName   = "sock_getsockopt"
+	SockListenName       = "sock_listen"
+	SockOpenName         = "sock_open"
+	SockRecvFromName     = "sock_recv_from"
+	SockSendToName       = "sock_send_to"
+	SockSetSockOptName   = "sock_setsockopt"
 )
 
 // SD Flags indicate which channels on a socket to shut down.

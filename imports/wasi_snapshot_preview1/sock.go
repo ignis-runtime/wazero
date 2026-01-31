@@ -186,3 +186,72 @@ func sockShutdownFn(_ context.Context, mod api.Module, params []uint64) sys.Errn
 	// TODO: Map this instead of relying on syscall symbols.
 	return conn.Shutdown(sysHow)
 }
+
+var sockBind = newHostFunc(wasip1.SockBindName, sockBindFn, []wasm.ValueType{i32, i32, i32}, "fd", "addr", "port")
+
+func sockBindFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockConnect = newHostFunc(wasip1.SockConnectName, sockConnectFn, []wasm.ValueType{i32, i32, i32}, "fd", "addr", "port")
+
+func sockConnectFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockOpen = newHostFunc(wasip1.SockOpenName, sockOpenFn, []wasm.ValueType{i32, i32, i32}, "af", "socktype", "result_fd")
+
+func sockOpenFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	// af := int32(params[0])
+	// socktype := int32(params[1])
+	// fdPtr := uint32(params[2])
+	return sys.ENOTSUP
+}
+
+var sockListen = newHostFunc(wasip1.SockListenName, sockListenFn, []wasm.ValueType{i32, i32}, "fd", "backlog")
+
+func sockListenFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockGetSockOpt = newHostFunc(wasip1.SockGetSockOptName, sockGetSockOptFn, []wasm.ValueType{i32, i32, i32, i32, i32}, "fd", "level", "name", "value", "value_len")
+
+func sockGetSockOptFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockSetSockOpt = newHostFunc(wasip1.SockSetSockOptName, sockSetSockOptFn, []wasm.ValueType{i32, i32, i32, i32, i32}, "fd", "level", "name", "value", "value_len")
+
+func sockSetSockOptFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockGetLocalAddr = newHostFunc(wasip1.SockGetLocalAddrName, sockGetLocalAddrFn, []wasm.ValueType{i32, i32, i32, i32}, "fd", "addr", "addr_type", "port")
+
+func sockGetLocalAddrFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockGetPeerAddr = newHostFunc(wasip1.SockGetPeerAddrName, sockGetPeerAddrFn, []wasm.ValueType{i32, i32, i32, i32}, "fd", "addr", "addr_type", "port")
+
+func sockGetPeerAddrFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockRecvFrom = newHostFunc(wasip1.SockRecvFromName, sockRecvFromFn, []wasm.ValueType{i32, i32, i32, i32, i32, i32, i32, i32}, "fd", "iovs", "iovs_len", "addr", "iflags", "port", "nread", "oflags")
+
+func sockRecvFromFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockSendTo = newHostFunc(wasip1.SockSendToName, sockSendToFn, []wasm.ValueType{i32, i32, i32, i32, i32, i32, i32}, "fd", "iovs", "iovs_len", "addr", "port", "flags", "nwritten")
+
+func sockSendToFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
+
+var sockGetAddrInfo = newHostFunc(wasip1.SockGetAddrInfoName, sockGetAddrInfoFn, []wasm.ValueType{i32, i32, i32, i32, i32, i32, i32, i32}, "node", "node_len", "service", "service_len", "hints", "res", "max_res_len", "res_len")
+
+func sockGetAddrInfoFn(ctx context.Context, mod api.Module, params []uint64) sys.Errno {
+	return sys.ENOTSUP
+}
